@@ -1,0 +1,253 @@
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+.dashboard-wrapper {
+  background-color: #dbeafe;
+  display: flex;
+  min-height: 100vh;
+}
+
+.main-content {
+  
+  flex: 1;
+  padding: 2rem 2.5rem;
+}
+
+/* Header */
+.dashboard-header {
+  margin-bottom: 2rem;
+}
+
+.dashboard-header h1 {
+  font-size: 2.2rem;
+  margin: 0 0 0.4rem;
+  color: #1e293b;
+}
+
+.subtitle {
+  color: #64748b;
+  font-size: 1.05rem;
+  margin: 0;
+}
+
+/* Stats Cards */
+.stats-section {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.6rem;
+  margin-bottom: 2.8rem;
+}
+
+.stat-card {
+  background: white;
+  border-radius: 12px;
+  padding: 1.8rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.stat-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 10px #fff;
+}
+
+.stat-card.total{ 
+  background-color: #2564ebc8;
+  color: white;
+}
+.stat-card.resolved{  
+  background-color: yellowgreen;
+  color: white;
+}
+.stat-card.pending{ 
+  background-color: orange;
+  color: white;
+}
+
+.icon {
+  font-size: 2.6rem;
+  opacity: 0.9;
+}
+
+.stat-info h3 {
+  margin: 0 0 0.4rem;
+  font-size: 1.1rem;
+  color: white;
+  font-weight: 600;
+}
+
+.value {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin: 0;
+  line-height: 1;
+  color: white;
+}
+
+/* Recent Complaints Section */
+.section-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.6rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.section-title h2 {
+  margin: 0;
+  font-size: 1.6rem;
+  color: #1e293b;
+}
+
+.btn {
+  padding: 0.7rem 1.5rem;
+  border-radius: 8px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 0.2s;
+  white-space: nowrap;
+}
+
+.btn-raise {
+  background: #3b82f6;
+  color: white;
+  transition: all 0.5s ease-in;
+}
+
+.btn-raise:hover {
+  color: blue;
+  background-color: #fff;
+  border: 1px solid blue;
+  width: 220px;
+  text-align: center;
+  font-weight: bold;
+
+}
+
+.btn-outline {
+  border: 2px solid #3b82f6;
+  color: #3b82f6;
+  background: transparent;
+}
+
+.btn-outline:hover {
+  background: #3b82f6;
+  color: white;
+}
+
+.complaints-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.complaint-item {
+  border: 1px solid blue;
+  background: white;
+  border-radius: 10px;
+  padding: 1.4rem;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+  transition: all 0.2s;
+}
+
+.complaint-item:hover {
+  transform: translateY(-3px);
+  box-shadow: 0px 0px 10px #fff;
+  border: none;
+}
+
+.complaint-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 0.8rem;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+}
+
+.complaint-header h3 {
+  margin: 0;
+  font-size: 1.25rem;
+  flex: 1;
+}
+
+.status-badges {
+  display: flex;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+}
+
+.badge {
+  padding: 0.35rem 0.9rem;
+  border-radius: 20px;
+  font-size: 0.82rem;
+  font-weight: 600;
+}
+
+.priority-low    { background: #d1fae5; color: #065f46; }
+.priority-medium { background: #fef3c7; color: #92400e; }
+.priority-high   { background: #fee2e2; color: #991b1b; }
+
+.status-pending,
+.status-in-progress { background: #dbeafe; color: #1e40af; }
+.status-resolved    { background: #dcfce7; color: #166534; }
+
+.complaint-desc {
+  color: #4b5563;
+  margin: 0 0 0.8rem;
+  line-height: 1.5;
+}
+
+.complaint-meta {
+  font-size: 0.9rem;
+  color: #64748b;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.has-image {
+  color: #8b5cf6;
+  font-weight: 500;
+}
+
+/* Empty state */
+.no-data {
+  text-align: center;
+  padding: 4rem 1rem;
+  color: #64748b;
+  background: #f8fafc;
+  border-radius: 12px;
+}
+
+.no-data p {
+  font-size: 1.15rem;
+  margin-bottom: 1.5rem;
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+  .main-content {
+    padding: 1.5rem;
+  }
+  .stats-section {
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .section-title {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .btn {
+    width: 100%;
+    text-align: center;
+  }
+}

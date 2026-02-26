@@ -1,0 +1,86 @@
+/* Reset */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Center container */
+body {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
+    padding: 20px;
+}
+
+/* Main box */
+.main_container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+/* Container */
+.container {
+    background-color: #ffffff;
+    width: 50%;
+    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+/* Heading */
+.container h1 {
+    font-size: 28px;
+    color: #333;
+    font-weight: 700;
+}
+
+/* Paragraph */
+.container p {
+    font-size: 16px;
+    color: #666;
+}
+
+/* Link */
+.container > a {
+    text-decoration: none;
+    color: white;
+    background-color: #3434e1;
+    padding: 12px 25px;
+    font-weight: 600;
+    font-size: 16px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+.container > a:hover {
+    background-color: #2222c9;
+    transform: translateY(-2px);
+}
+
+/* Responsive */
+@media screen and (max-width: 768px) {
+    .container {
+        width: 80%;
+        padding: 30px;
+        gap: 20px;
+    }
+    .container h1 {
+        font-size: 22px;
+    }
+    .container > a {
+        font-size: 14px;
+        padding: 10px 20px;
+    }
+}

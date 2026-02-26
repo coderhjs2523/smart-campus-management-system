@@ -1,0 +1,15 @@
+<!-- Navbar start -->
+<section class="nav">
+  <!-- Logo -->
+  <a href="/"><img class="logo" src="images/logo.png" alt="Smart Campus Logo" /></a>
+  <div class="left_nav">
+    <!-- Greeting -->
+    <p class="name">Hello, <%= typeof userName !== 'undefined' && userName ? userName : 'Guest' %></p>
+    <!-- Login/Register links-->
+      <div class="auth-links">
+        <a href="/login" class="login-btn">Login</a>
+        <a href="/register" class="register-btn">Register</a>
+      </div>
+  </div>
+</section>
+<!-- Navbar end -->

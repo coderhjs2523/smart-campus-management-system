@@ -1,0 +1,90 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.register_container{
+    height: 100vh;
+    background-color: rgb(236, 236, 235);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.form_container{
+    background-color: azure;
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0px 0px 5px #fff;
+    padding: 50px;
+    transition: all 0.5s ease-in;
+}
+.form_container:hover{
+    scale: 1.025;
+    box-shadow: 0px 0px 5px rgb(214, 214, 253);
+}
+form{
+    margin-top: 20px;
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+}
+.form_div{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    font-size: 18px;
+    font-weight: bold;
+    color: rgb(72, 71, 71);
+}
+input{
+    width: 100%;
+    padding: 8px;
+    border: none;
+    box-shadow: 0px 0px 5px rgb(138, 136, 136);
+    transition: all 0.5s ease-in;
+}
+input:hover{
+    border: 1px solid blue;
+    box-shadow: 0px 0px 5px rgb(77, 77, 239);
+}
+#role{
+    border: none;
+    padding: 8px;
+    box-shadow: 0px 0px 5px rgb(62, 61, 61);
+}
+#role:hover{
+    border: 1px solid blue;
+    box-shadow: 0px 0px 5px rgb(77, 77, 239);
+}
+button{
+    width: 100%;
+    padding: 8px;
+    font-size: 18px;
+    font-weight: bold;
+    border: none;
+    color: white;
+    background-color: blue;
+    transition: all 0.5s ease-in;
+}
+button:hover{
+    background-color: white;
+    color: blue;
+    border: 1px solid blue;
+    box-shadow: 0px 0px 5px rgb(77, 77, 239);
+}
+p{
+    font-size: 18px;
+    margin-top: 30px;
+}
+p>a{
+    text-decoration: none;
+    font-weight: bold;
+    color: blue;
+}
+p>a:hover{
+    color: red;
+}

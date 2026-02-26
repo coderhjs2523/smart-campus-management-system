@@ -1,0 +1,78 @@
+/* Reset */
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Center container */
+.logout_container {
+    height: 100vh;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: aliceblue;
+}
+
+/* Box */
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0px 0px 10px rgb(146, 144, 144);
+    text-align: center;
+    transition: all 0.8s ease;
+    background-color: azure;
+}
+.container:hover{
+    scale: 1.025;
+    box-shadow: 0px 0px 10px rgba(10, 244, 205, 0.456);
+}
+
+/* Heading */
+.container h1 {
+    font-size: 28px;
+    color: #333;
+    font-weight: 700;
+}
+
+/* Paragraph */
+.container p {
+    font-size: 16px;
+    color: #666;
+}
+
+/* Link */
+.container > a {
+    text-decoration: none;
+    color: white;
+    background-color: skyblue;
+    padding: 12px 25px;
+    font-weight: 600;
+    font-size: 16px;
+    border-radius: 8px;
+    transition: all 0.8s ease;
+}
+.container > a:hover {
+    background-color: #fff;
+    color: blue;
+    box-shadow: 0px 0px 5px rgba(32, 173, 255, 0.919);
+    width: 200px;
+}
+
+/* Responsive */
+@media screen and (max-width: 768px) {
+    .container {
+        width: 80%;
+        padding: 30px;
+        gap: 20px;
+    }
+    .container h1 {
+        font-size: 24px;
+    }
+}

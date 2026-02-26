@@ -1,0 +1,54 @@
+<%- include('./partials/head') %>
+<link rel="stylesheet" href="/feedback.css">
+</head>
+<body>
+  <%- include('./partials/top') %>
+
+  <!-- main section start -->
+  <main class="feedback_container">
+    <div class="feedback_div">
+      <h1 class="main_heading">Feedback</h1>
+
+      <form action="/feedback" method="POST" class="feedback_form">
+
+        <!-- Name -->
+        <div class="form_div">
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" placeholder="Your Name" required value="<%= userName || '' %>">
+        </div>
+
+        <!-- Email -->
+        <div class="form_div">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" placeholder="Your Email" required>
+        </div>
+
+        <!-- Message -->
+        <div class="form_div">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="5" placeholder="Your Feedback" required></textarea>
+        </div>
+
+        <!-- Rating -->
+        <div class="form_div">
+          <label for="rating">Rating</label>
+          <select id="rating" name="rating" required>
+            <option value="">Select Rating</option>
+            <option value="Excellent">Excellent</option>
+            <option value="Good">Good</option>
+            <option value="Average">Average</option>
+            <option value="Poor">Poor</option>
+          </select>
+        </div>
+
+        <!-- Submit Button -->
+        <button type="submit" class="submit_btn">
+          Submit Feedback ✨
+        </button>
+
+      </form>
+    </div>
+  </main>
+  <!-- main section end -->
+</body>
+</html>

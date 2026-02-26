@@ -1,0 +1,304 @@
+/* hero section start */
+.hero_section{
+  height: 81.5vh;
+  background: linear-gradient(to right, #48b8bb, #8065bc);
+  padding-top: 90px;
+  padding-bottom: 90px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 136px;
+}
+.container_hero{
+  width: 80vw;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: center;
+  gap: 50px;
+}
+.hero_data{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 30px;
+}
+.hero_data >h1{
+  font-size: 50px;
+  text-shadow: 0px 0px 10px #fff; 
+}
+.hero_data> h3{
+  font-size: 30px;
+}
+.hero_data>p{
+  font-size: 20px;
+}
+.hero_btn{
+  width: 30%;
+  padding: 10px;
+  font-size: 20px;
+  color: greenyellow;
+  text-decoration: none;
+  text-align: center;
+  border-radius: 10px;
+  border: 2px solid white;
+  background-color: rgb(5, 69, 101);
+  box-shadow: 0px 0px 10px white;
+  transition: all 0.5s linear;
+}
+.hero_btn:hover{
+  scale: 1.02;
+  background-color: white;
+  color: blue;
+  font-weight: bold;
+}
+.hero_image > img{
+  width: 100%;
+  height: 450px;
+  z-index: 1;
+  /* filter: contrast(1.2) brightness(80%) drop-shadow(0px 0px 20px #fff) saturate(90%); */
+  filter: drop-shadow(0px 0px 20px #fff);
+  border-radius: 20px;
+  animation-name: bottomtoup;
+  animation-duration: 1.5s;
+  animation-timing-function: linear;
+  transition-property: scale;
+  transition-duration: 1s;
+  transition-timing-function: liner;
+}
+/* hero section end */
+/* why choose section start  */
+.why_choose_container{
+  margin-top: 100px;
+  width: 90vw;
+  display: flex;
+  justify-content: center;
+  justify-self: center;
+}
+.why_choose_sub_container{
+ width: 80vw;
+}
+.why_choose > h1{
+  margin-bottom: 15px;
+}
+.why_choose>p{
+  font-size: 20px;
+}
+.why_choose_point{
+  perspective: 1000px;
+  margin-top: 100px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 50px;
+}
+.left_data_point,.right_data_point{
+  display: grid;
+  grid-template-rows: repeat(3, 1fr);
+  row-gap: 50px;
+}
+.data_point{
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  animation-name: zoomout;
+  animation-duration: 2s;
+  animation-timing-function: ease-out forward;
+  transition: all 0.2s linear;
+}
+.data_point:hover{
+  scale: 1.08;
+}
+@keyframes zoomout {
+  from {
+    /* Starts slightly lower and smaller */
+    transform: translateY(20px) scale(0.9);
+    opacity: 0;
+  }
+  to {
+    /* Ends at natural position and full size */
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+}
+.num{
+  background-color: #7b7fd1;
+  padding: 15px 20px;
+  border-radius: 50px;
+  color: white;
+  font-weight: bold;
+  width: max-content;
+}
+.num1{
+ align-self: self-end;
+}
+.left_data_point{
+  text-align: right;
+}
+.why_choose_image{
+  width: 80%;
+  border-radius: 200px;
+  filter: brightness(1.02) contrast(1.2) drop-shadow(0px 0px 10px rgb(162, 162, 221));
+  transition-property: all;
+  transition-duration: 0.5s;
+  transition-timing-function: ease-out;
+}
+.why_choose_image:hover{
+  scale: 1.09;
+  filter: brightness(1.2) drop-shadow(0px 0px 10px rgb(36, 90, 226));
+}
+.why_choose_image_button{
+  align-self: center;
+  text-align: center;
+}
+/* why choose section End */
+
+
+/* Extra section start */
+.extra_product_section{
+ width: 95vw;
+ display: flex;
+ flex-direction: column;
+ justify-self: center;
+ justify-content: center;
+ align-items: center;
+ margin-top: 130px;
+}
+.extra_products{
+  margin-top: 60px;
+  width: 80vw;
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  gap: 20px;
+}
+.card{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  padding: 20px;
+  background-color: whitesmoke;
+  box-shadow: 0px 0px 10px rgb(229, 229, 227);
+  transition: all 0.2s linear;
+}
+.card:hover{
+  scale: 1.08;
+}
+.card_data{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.card_data>a{
+  width: max-content;
+  margin-top: 15px;
+  color: #4950e3;
+  text-decoration: none;
+  font-weight: bold;
+  text-shadow: 0px 0px 1.5px #fff;
+  transition: all 0.2s linear;
+}
+.card_data>a:hover{
+  background-color: white;
+  box-shadow: 0px 0px 10px rgb(87, 87, 188);
+  color: rgb(95, 95, 184);
+  width: 80%;
+  text-align: center;
+  padding: 5px;
+  border-radius: 10px;
+  font-weight: bold;
+}
+.card_image{
+  width: 100%;
+  border: 2px solid white;
+  border-bottom-left-radius: 15px;
+  filter: drop-shadow(0px 0px 10px #d0f5f4);
+  transition-property: all;
+  transition-duration: 0.2s;
+  transition-timing-function: linear;
+}
+.card_image:hover{
+  scale: 1.05;
+  filter: drop-shadow(0px 0px 10px #fff);
+}
+/* Extra section End */
+
+/* Footer section start */
+.footer_container{
+  margin-top: 80px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-self: center;
+}
+footer{
+  background-color: black;
+  color: white;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-items: center;
+  align-items: center;
+  gap: 20px;
+}
+.left_footer{
+  padding-left: 50px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.footer_logo{
+  width: 40%;
+  border-radius: 100px;
+  filter: brightness(1.02) drop-shadow(0px 0px 10px #fff);
+  animation-name: zoomout;
+  animation-duration: 2s;
+  animation-timing-function: ease-out forward;
+  transition: all 0.2s ease-out;
+}
+.footer_logo:hover{
+  scale: 1.09;
+  filter: brightness(1.2) drop-shadow(0px 0px 10px greenyellow);
+}
+.left_footer_images{
+  display: flex;
+  margin: 20px;
+  gap: 10px;
+}
+.footer_image{
+  width: 10%;
+  border-radius: 5px;
+  transition: scale 0.2s linear;
+}
+.footer_image:hover{
+  scale: 1.2;
+  filter: brightness(1.2) drop-shadow(0px 0px 10px #fff);
+}
+.middle_footer{
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.para{
+  line-height: 30px;
+  font-size: 20px;
+}
+.para>p>a{
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: 20px;
+    color: blue;
+}
+.right_footer{
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.coder{
+  height: 50px;
+  color: white;
+  background-color: black;
+  width: 100%;
+  text-align: center;
+  padding-top: 15px;
+  border-top: 1px solid white;
+}
+/* Footer section end */
+

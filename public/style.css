@@ -1,0 +1,280 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+/* nav bar start */
+.nav{
+    height: 10vh;
+    background-color: black;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 100;
+}
+.logo{
+    width: 35%;
+}
+.left_nav{
+    width: 30%;
+    display: flex;
+    justify-content: space-around;
+    gap: 50px;
+}
+.auth-links{
+    display: flex;
+    gap: 40px;
+}
+.auth-links>a{
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: bold;
+    color: blue;
+}
+.auth-links>a:hover{
+    color: #fff;
+}
+.name{
+    font-size: 18px;
+}
+.navbar{
+    background-color: rgb(222, 222, 222);
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 20px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 100;
+    margin-top: 70px;
+}
+.navbar>ul{
+    display: flex;
+    gap: 40px;
+    padding-right: 40px;
+}
+.navbar>ul>li{
+    list-style: none;
+}
+.navbar>ul>li>a{
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: bold;
+    color: black;
+}
+.navbar>ul>li>a:hover{
+    color: orange;
+    text-decoration: greenyellow underline;
+}
+/* nav bar css end */
+
+/* Top css start */
+.sidebar{
+    width: 100%;
+    background-color: rgba(52, 52, 188, 0.877);
+    height: 12vh;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+.sidebar>ul{
+    padding-right: 50px;
+    display: flex;
+    gap: 80px;
+}
+.sidebar>ul>li{
+    list-style: none;
+}
+.sidebar>ul>li>a{
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    text-shadow: 0px 0px 2px #fff;
+    transition: all 0.5s ease-out;
+}
+.sidebar>ul>li>a:hover{
+    color: greenyellow;
+    font-size: 22px;
+    text-decoration: greenyellow underline;
+}
+/* Top css end */
+
+@media (max-width: 800px){
+    .sidebar>ul{
+        flex-wrap: wrap;
+        padding: 20px;
+        gap: 30px;
+    }
+}
+
+
+/* ============================= */
+/* 📱 TABLET RESPONSIVE (1024px) */
+/* ============================= */
+
+@media (max-width: 1024px){
+
+  .container_hero{
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .hero_btn{
+    width: 50%;
+    align-self: center;
+  }
+
+  .why_choose_point{
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .left_data_point,
+  .right_data_point{
+    text-align: center;
+  }
+
+  .extra_products{
+    grid-template-columns: repeat(2,1fr);
+  }
+
+  footer{
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .left_footer{
+    padding-left: 0;
+    align-items: center;
+  }
+}
+
+
+/* ============================= */
+/* 📱 MOBILE RESPONSIVE (768px) */
+/* ============================= */
+
+@media (max-width: 768px){
+
+  /* NAV */
+  .nav{
+    flex-direction: column;
+    height: auto;
+    gap: 10px;
+    padding: 10px;
+  }
+
+  .logo{
+    width: 60%;
+  }
+
+  .left_nav{
+    width: 100%;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+  }
+
+  .auth-links{
+    gap: 20px;
+  }
+
+  /* NAVBAR MENU */
+  .navbar{
+    flex-direction: column;
+    padding: 10px;
+  }
+
+  .navbar ul{
+    flex-direction: column;
+    gap: 15px;
+    padding-right: 0;
+    text-align: center;
+  }
+
+  /* HERO */
+  .hero_section{
+    margin-top: 200px;
+    height: auto;
+    padding: 50px 20px;
+  }
+
+  .hero_data > h1{
+    font-size: 32px;
+  }
+
+  .hero_data > h3{
+    font-size: 22px;
+  }
+
+  .hero_data > p{
+    font-size: 16px;
+  }
+
+  .hero_image img{
+    height: auto;
+    width: 100%;
+  }
+
+  /* WHY CHOOSE */
+  .why_choose_container{
+    width: 95vw;
+  }
+
+  .why_choose_point{
+    gap: 40px;
+  }
+
+  /* EXTRA PRODUCTS */
+  .extra_products{
+    grid-template-columns: 1fr;
+  }
+
+  /* FOOTER */
+  footer{
+    padding: 20px;
+  }
+
+  .footer_image{
+    width: 20%;
+  }
+
+  .footer_logo{
+    width: 60%;
+  }
+}
+
+
+/* ============================= */
+/* 📱 SMALL MOBILE (480px) */
+/* ============================= */
+
+@media (max-width: 480px){
+
+  .hero_btn{
+    width: 80%;
+  }
+
+  .hero_data > h1{
+    font-size: 26px;
+  }
+
+  .hero_data > h3{
+    font-size: 18px;
+  }
+
+  .para{
+    font-size: 16px;
+  }
+
+  .navbar ul li a{
+    font-size: 16px;
+  }
+}

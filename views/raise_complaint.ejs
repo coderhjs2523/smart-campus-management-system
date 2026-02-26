@@ -1,0 +1,67 @@
+<%- include('./partials/head') %>
+<link rel="stylesheet" href="/raise_complaint.css">
+</head>
+<body>
+  <%- include('./partials/top') %>
+
+  <main class="complaint_container">
+    <div class="form_container">
+      <h1 class="main_heading">Raise Complaint</h1>
+
+    <form action="/submit" method="POST" enctype="multipart/form-data" class="complaint_form">
+
+      <!-- Title -->
+      <div class="form_div">
+        <label for="title">Title</label>
+        <input type="text" id="title" name="title" placeholder="Enter the complaint title" required>
+      </div>
+
+      <!-- Description -->
+      <div class="form_div">
+        <label for="description">Description</label>
+        <textarea id="description" name="description" rows="5" placeholder="Describe the issue in detail" required></textarea>
+      </div>
+
+      <!-- Category and Priority Row -->
+      <div class="form_row">
+        <!-- Category -->
+        <div class="form_div">
+          <label for="category">Category</label>
+          <select name="category" id="category" required>
+            <option value="">Select Category</option>
+            <option value="Hostel">Hostel</option>
+            <option value="Canteen">Canteen</option>
+            <option value="Library">Library</option>
+            <option value="Electricity">Electricity</option>
+            <option value="Other">Other</option>
+            <option value="Subject">Subject</option>
+          </select>
+        </div>
+
+        <!-- Priority -->
+        <div class="form_div">
+          <label for="priority">Priority</label>
+          <select name="priority" id="priority" required>
+            <option value="">Select Priority</option>
+            <option value="Low">Low</option>
+            <option value="Medium">Medium</option>
+            <option value="High">High</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Image Upload -->
+      <div class="form_div">
+        <label for="problem_image">Upload Image</label>
+        <input type="file" id="problem_image" name="problem_image" accept="image/*">
+      </div>
+
+      <!-- Submit Button -->
+      <button type="submit" class="submit_btn">Submit Complaint</button>
+
+    </form>
+    </div>
+    
+  </main>
+</body>
+</html>

@@ -1,0 +1,113 @@
+<%- include('./partials/head') %>
+<link rel="stylesheet" href="/dashboard.css">
+<link rel="stylesheet" href="/admin-dashboard.css">
+</head>
+<body class="admin-theme">
+
+  <%- include('./partials/topadmin') %>
+
+  <div class="dashboard-wrapper">
+
+    <main class="main-content">
+
+      <!-- Header -->
+      <header class="dashboard-header admin-header">
+        <h1>Admin Dashboard</h1>
+        <p class="subtitle">Campus-Wide Complaint Management Overview</p>
+      </header>
+
+      <!-- Stats Cards -->
+      <section class="stats-section admin-stats">
+        <div class="stat-card total">
+          <i class="fa-solid fa-clipboard-list icon"></i>
+          <div class="stat-info">
+            <h3>Total Complaints</h3>
+            <p class="value"><%= totalComplaints || 0 %></p>
+          </div>
+        </div>
+
+        <div class="stat-card resolved">
+          <i class="fa-solid fa-check-circle icon"></i>
+          <div class="stat-info">
+            <h3>Resolved Complaints</h3>
+            <p class="value"><%= resolvedComplaints || 0 %></p>
+          </div>
+        </div>
+
+        <div class="stat-card pending">
+          <i class="fa-solid fa-hourglass-half icon"></i>
+          <div class="stat-info">
+            <h3>Pending Complaints</h3>
+            <p class="value"><%= pendingComplaints || 0 %></p>
+          </div>
+        </div>
+
+        <div class="stat-card users">
+          <i class="fa-solid fa-users icon"></i>
+          <div class="stat-info">
+            <h3>Total Users</h3>
+            <p class="value"><%= totalUsers || 0 %></p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Quick Actions -->
+      <section class="quick-actions">
+        <h2>Admin Quick Actions</h2>
+        <div class="action-grid">
+          <a href="/admin_analytics" class="action-tile">
+            <i class="fa-solid fa-chart-line"></i>
+            <span>Analytics & Reports</span>
+          </a>
+
+          <a href="/admin_complaints" class="action-tile">
+            <i class="fa-solid fa-list-check"></i>
+            <span>Manage Complaints</span>
+          </a>
+
+          <a href="/admin_feedback" class="action-tile">
+            <i class="fa-solid fa-comment-dots"></i>
+            <span>View Feedback</span>
+          </a>
+        </div>
+      </section>
+
+      <!-- Latest Complaints (campus-wide) -->
+      <section class="recent-section">
+        <div class="section-title">
+          <h2>Latest Campus Complaints</h2>
+        </div>
+
+        <% if (recentComplaints && recentComplaints.length > 0) { %>
+          <div class="complaints-list">
+            <% recentComplaints.forEach(c => { %>
+              <div class="complaint-item">
+                <div class="complaint-header">
+                  <h3><%= c.title %></h3>
+                  <div class="status-badges">
+                    <span class="badge priority-<%= c.priority.toLowerCase() %>"><%= c.priority %></span>
+                    <span class="badge status-<%= c.status.toLowerCase().replace(' ', '-') %>">
+                      <%= c.status || 'Pending' %>
+                    </span>
+                  </div>
+                </div>
+                <p class="complaint-desc"><%= c.description.substring(0, 100) %>...</p>
+                <div class="complaint-meta">
+                  <span class="category"><%= c.category %></span>
+                  <span class="user-info">By: <%= c.user?.name || 'Unknown' %></span>
+                  <span class="date"><%= c.createdAt ? new Date(c.createdAt).toLocaleDateString() : 'Recent' %></span>
+                </div>
+              </div>
+            <% }) %>
+          </div>
+        <% } else { %>
+          <div class="no-data">
+            <p>No recent complaints on campus.</p>
+          </div>
+        <% } %>
+      </section>
+
+    </main>
+  </div>
+</body>
+</html>

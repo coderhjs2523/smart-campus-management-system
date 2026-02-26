@@ -1,0 +1,74 @@
+<%- include('./partials/head') %>
+<link rel="stylesheet" href="/admin_analytics.css">
+</head>
+<body>
+  <%- include('./partials/topadmin') %>
+
+  <!-- main section start -->
+  <main>
+    <div class="analytic_div">
+      <h1 class="main_heading">Admin Analytics</h1>
+
+      <!-- Analytics Cards -->
+      <div class="analytics_cards">
+        <div class="card card1">
+          <h2>Total Complaints</h2>
+          <p><%= totalComplaints || 0 %></p>
+        </div>
+        <div class="card card2">
+          <h2>Resolved Complaints</h2>
+          <p><%= resolvedComplaints || 0 %></p>
+        </div>
+        <div class="card card3">
+          <h2>Pending Complaints</h2>
+          <p><%= pendingComplaints || 0 %></p>
+        </div>
+        <div class="card card4">
+          <h2>Total Users</h2>
+          <p><%= totalUsers || 0 %></p>
+        </div>
+      </div>
+    </div>
+    <!-- Bar Chart -->
+    <canvas id="complaintsChart" width="400" height="200"></canvas>
+
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script>
+    const ctx = document.getElementById('complaintsChart').getContext('2d');
+    const complaintsChart = new Chart(ctx, {
+      type: 'bar',
+      data: {
+        labels: ['Total', 'Resolved', 'Pending'],
+        datasets: [{
+          label: 'Complaints',
+          data: [<%= totalComplaints || 0 %>, <%= resolvedComplaints || 0 %>, <%= pendingComplaints || 0 %>],
+          backgroundColor: [
+            'rgba(54, 162, 235, 0.6)',
+            'rgba(75, 192, 192, 0.6)',
+            'rgba(255, 206, 86, 0.6)'
+          ],
+          borderColor: [
+            'rgba(54, 162, 235, 1)',
+            'rgba(75, 192, 192, 1)',
+            'rgba(255, 206, 86, 1)'
+          ],
+          borderWidth: 1
+        }]
+      },
+      options: {
+        responsive: true,
+        plugins: {
+          legend: { display: false }
+        },
+        scales: {
+          y: {
+            beginAtZero: true
+          }
+        }
+      }
+    });
+  </script>
+</body>
+</html>

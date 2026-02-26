@@ -1,0 +1,31 @@
+<%- include('./partials/head') %>
+<link rel="stylesheet" href="/adminfeedback.css">
+</head>
+<body>
+  <%- include('./partials/topadmin') %>
+
+  <main>
+    <div class="adminfeedback_div">
+      <h1>All Feedback</h1>
+
+      <% if (feedbacks && feedbacks.length > 0) { %>
+        <div class="feedback_list">
+          <% feedbacks.forEach(feedback => { %>
+            <div class="feedback_card">
+              <h2><%= feedback.name %></h2>
+              <div class="data">
+                <p><strong>Email:</strong> <%= feedback.email %></p>
+                <p><strong>Rating:</strong> <%= feedback.rating %></p>
+                <p><strong>Date:</strong> <%= feedback.createdAt.toLocaleDateString() %></p>
+              </div>
+              <p><strong>Message:</strong> <%= feedback.message %></p>
+            </div>
+          <% }) %>
+        </div>
+      <% } else { %>
+        <p>No feedback yet.</p>
+      <% } %>
+   </div>
+  </main>
+</body>
+</html>

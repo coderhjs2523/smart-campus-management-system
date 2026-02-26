@@ -1,0 +1,54 @@
+<%- include('./partials/head') %>
+<link rel="stylesheet" href="/register.css">
+</head>
+<body>
+  <main class="register_container">
+    <div class="form_container">
+      <h1>Register</h1>
+
+      <form action="/register" method="POST">
+
+        <!-- Name -->
+        <div class="form_div">
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" placeholder="Your Full Name" required value="<%= typeof formData !== 'undefined' ? formData.name : '' %>">
+        </div>
+
+        <!-- Email -->
+        <div class="form_div">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" placeholder="Enter Email" required value="<%= typeof formData !== 'undefined' ? formData.email : '' %>">
+        </div>
+
+        <!-- Password -->
+        <div class="form_div">
+          <label for="password">Password</label>
+          <input type="password" id="password" name="password" placeholder="Enter Password" required >
+        </div>
+
+        <!-- Confirm Password -->
+        <div class="form_div">
+          <label for="confirm_password">Confirm Password</label>
+          <input type="password" id="confirm_password" name="confirm_password" placeholder="Re-enter Password" required >
+        </div>
+
+        <!-- Role -->
+        <div class="form_div">
+          <label for="role">Role</label>
+          <select id="role" name="role" required>
+            <option value="student">Student</option>
+            <option value="admin">Admin</option>
+          </select>
+        </div>
+
+        <!-- Submit Button -->
+        <button type="submit">Register</button>
+
+      </form>
+
+      <p>Already have an account? <a href="/login">Login here</a></p>
+
+    </div>
+  </main>
+</body>
+</html>

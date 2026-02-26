@@ -1,0 +1,46 @@
+<%- include('./partials/head') %>
+<link rel="stylesheet" href="/admin_complaint.css">
+</head>
+<body>
+  <%- include('./partials/topadmin') %>
+
+  <main class="admin_comp_con">
+    <div class="admin_complaint">
+      <h1>All Complaints</h1>
+
+      <% if (complaints && complaints.length > 0) { %>
+        <div class="complaints_list">
+          <% complaints.forEach(complaint => { %>
+            <div class="complaint_card">
+              <div class="data">
+                  <h2><%= complaint.title %></h2>
+                  <p><strong>User:</strong> <%= complaint.user.name %></p>
+                  <p><strong>Category:</strong> <%= complaint.category %></p>
+                  <p><strong>Status:</strong> <%= complaint.status %></p>
+                  <p><strong>Description:</strong> <%= complaint.description %></p>
+                  <p><strong>Priority:</strong> <%= complaint.priority %></p>
+                  <p><strong>Date:</strong> <%= complaint.createdAt.toLocaleDateString() %></p>
+              </div>
+              <% if (complaint.problem_image) { %>
+                <img src="/uploads/<%= complaint.problem_image %>" alt="Image" style="max-width: 200px;">
+              <% } %>
+              <!-- Admin actions -->
+                <div class="btn_div">
+                  <form action="/admin_update_complaint/<%= complaint._id %>" method="POST">
+                    <select name="status" class="status">
+                      <option value="Pending" <%= complaint.status === 'Pending' ? 'selected' : '' %>>Pending</option>
+                      <option value="Resolved" <%= complaint.status === 'Resolved' ? 'selected' : '' %>>Resolved</option>
+                    </select>
+                    <button type="submit">Update Status</button>
+                  </form>
+                </div>
+            </div>
+          <% }) %>
+        </div>
+      <% } else { %>
+        <p>No complaints yet.</p>
+      <% } %>
+    </div>
+  </main>
+</body>
+</html>

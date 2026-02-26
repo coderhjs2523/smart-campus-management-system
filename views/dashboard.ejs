@@ -1,0 +1,87 @@
+<%- include('./partials/head') %>
+<link rel="stylesheet" href="/dashboard.css">
+</head>
+<body>
+
+  <%- include('./partials/top') %>
+
+  <div class="dashboard-wrapper">
+
+    <main class="main-content">
+
+      <!-- Header -->
+      <header class="dashboard-header">
+        <h1>Hello, <%= userName || 'Student' %></h1>
+        <p class="subtitle">Your Campus Complaint Overview</p>
+      </header>
+
+      <!-- Stats Cards -->
+      <section class="stats-section">
+        <div class="stat-card total">
+          <i class="fa-solid fa-clipboard-list icon"></i>
+          <div class="stat-info">
+            <h3>Total Complaints</h3>
+            <p class="value"><%= totalComplaints || 0 %></p>
+          </div>
+        </div>
+
+        <div class="stat-card resolved">
+          <i class="fa-solid fa-check-circle icon"></i>
+          <div class="stat-info">
+            <h3>Resolved</h3>
+            <p class="value"><%= resolvedComplaints || 0 %></p>
+          </div>
+        </div>
+
+        <div class="stat-card pending">
+          <i class="fa-solid fa-hourglass-half icon"></i>
+          <div class="stat-info">
+            <h3>Pending</h3>
+            <p class="value"><%= pendingComplaints || 0 %></p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Recent Complaints -->
+      <section class="recent-complaints">
+        <div class="section-title">
+          <h2>Recent Complaints</h2>
+          <a href="/raise_complaint" class="btn btn-raise">+ Raise New Complaint</a>
+        </div>
+
+        <% if (recentComplaints && recentComplaints.length > 0) { %>
+          <div class="complaints-list">
+            <% recentComplaints.forEach(c => { %>
+              <div class="complaint-item">
+                <div class="complaint-header">
+                  <h3><%= c.title %></h3>
+                  <div class="status-badges">
+                    <span class="badge priority-<%= c.priority.toLowerCase() %>"><%= c.priority %></span>
+                    <span class="badge status-<%= c.status.toLowerCase().replace(' ', '-') %>">
+                      <%= c.status || 'Pending' %>
+                    </span>
+                  </div>
+                </div>
+                <p class="complaint-desc"><%= c.description.substring(0, 120) %>...</p>
+                <div class="complaint-meta">
+                  <span class="category"><%= c.category %></span>
+                  <span class="date"><%= c.createdAt ? new Date(c.createdAt).toLocaleDateString() : 'Recent' %></span>
+                  <% if (c.problem_image) { %>
+                    <span class="has-image">📸 Image attached</span>
+                  <% } %>
+                </div>
+              </div>
+            <% }) %>
+          </div>
+        <% } else { %>
+          <div class="no-data">
+            <p>You haven't raised any complaints yet.</p>
+            <a href="/raise_complaint" class="btn btn-outline">Raise Complaint Now</a>
+          </div>
+        <% } %>
+      </section>
+
+    </main>
+  </div>
+</body>
+</html>

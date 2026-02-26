@@ -1,0 +1,101 @@
+.complaint_container {
+    height: 88vh;
+    background-color: aliceblue;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.form_container{
+    background-color: rgb(216, 240, 252);
+    padding-top: 10px;
+    margin-top: 12px;
+    width: 60%;
+    box-shadow: 0px 0px 10px rgb(172, 212, 232);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: all 1.2s ease-out;
+}
+.form_container:hover{
+    scale: 1.02;
+    box-shadow: 0px 0px 10px #fff;
+}
+/* Main Form Box */
+form {
+    width: 100%;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;   
+}
+/* Form Div */
+.form_div {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+/* Labels */
+.form_div label {
+    font-size: 16px;
+    font-weight: bold;
+    color: rgb(69, 68, 68);
+}
+
+/* Inputs, Textarea & Select */
+.form_div input, .form_div textarea, .form_div select {
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    outline: none;
+    transition: border 0.3s ease;
+    box-shadow: 0px 0px 5px rgb(112, 170, 252);
+}
+.form_div input:focus, .form_div textarea:focus, .form_div select:focus {
+    border-color: #3434e1;
+}
+
+/* Row for Category & Priority */
+.form_row {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+.form_row .form_div {
+  flex: 1;
+  min-width: 150px;
+}
+#problem_image{
+    background-color: white;
+}
+/* Submit Button */
+.submit_btn {
+    padding: 14px;
+    border: none;
+    background-color: #3434e1;
+    color: white;
+    font-weight: bold;
+    font-size: 15px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 1.2s ease-out;
+}
+.submit_btn:hover{
+    background-color: #fff;
+    color: blue;
+    box-shadow: 0px 0px 5px rgb(112, 170, 252);
+    font-weight: bold;
+}
+
+/* Responsive */
+@media screen and (max-width: 768px) {
+    form {
+        width: 90%;
+        padding: 30px;
+    }
+    .form_row {
+        flex-direction: column;
+    }
+}

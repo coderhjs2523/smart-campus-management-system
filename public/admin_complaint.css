@@ -1,0 +1,92 @@
+.admin_complaint{
+    background-color: aliceblue;
+    height: 88vh;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.complaints_list{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 30px;
+    width: 80%;
+}
+.complaint_card{
+    height: 200px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color:  rgba(167, 209, 246, 0.734);
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(76, 76, 213, 0.553);
+    transition: all 0.8s ease;
+}
+.complaint_card:hover{
+    scale: 1.025;
+    box-shadow: 0px 0px 10px #fff;
+}
+.data{
+     width: 60%;
+     height: 100%;
+     padding: 20px;
+     line-height: 30px;
+     overflow: auto;
+}
+.data>p>strong{
+    color: red;
+}
+img{
+    width: 80%;
+    height: 80%;
+    filter: drop-shadow(0px 0px 5px rgb(150, 150, 149));
+    transition: all 0.8s ease;
+}
+img:hover{
+    filter: drop-shadow(0px 0px 5px rgb(83, 213, 246));
+    border-radius: 10px;
+
+}
+.btn_div{
+    padding-right: 30px;
+}
+.btn_div>form{
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+}
+.status,button{
+    padding: 5px;
+    padding-left: 8px;
+    padding-right: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    transition: all 0.8s ease;
+    
+}
+.status{
+    background-color: #FF5722;
+    color: white;
+}
+button{
+    background-color: #FFFFFF;
+    color: red;
+}
+button:hover,.status:hover{
+    scale: 1.12;
+    box-shadow: 0px 0px 2px blue;
+    background-color: #fff;
+    color: blue;
+
+}
+@media screen and (width<=1200px) {
+    img{
+        display: none;
+    }
+    .data{
+     width: 70%;
+}
+}

@@ -1,0 +1,41 @@
+<%- include('./partials/head') %>
+<link rel="stylesheet" href="/my_complaint.css">
+</head>
+<body>
+  <%- include('./partials/top') %>
+
+  <!-- main section start -->
+  <main class="my_complaint_container">
+    <div class="my_complaint_div">
+      <h1 class="main_heading">My Complaints</h1>
+
+    <% if (complaints && complaints.length > 0) { %>
+      <div class="complaints_list">
+        <% complaints.forEach(complaint => { %>
+          <div class="complaint_card">
+            <div class="complain_data">
+              <h2><%= complaint.title %></h2>
+              <p><strong>Category:</strong> <%= complaint.category %></p>
+              <p><strong>Status:</strong> <%= complaint.status %></p>
+              <p><strong>Description:</strong> <%= complaint.description %></p>
+              <p><strong>Priority:</strong> <%= complaint.priority %></p>
+              <p><strong>Date:</strong> <%= complaint.createdAt.toLocaleDateString() %></p>
+            </div>
+            <div class="image">
+              <% if (complaint.problem_image) { %>
+                <img src="/uploads/<%= complaint.problem_image %>" alt="Complaint Image" class="complaint_image">
+              <% } %>
+            </div>
+          </div>
+        <% }) %>
+      </div>
+    <% } else { %>
+      <p class="no_complaints">You have not submitted any complaints yet.</p>
+    <% } %>
+
+    </div>
+    
+  </main>
+  <!-- main section end -->
+</body>
+</html>

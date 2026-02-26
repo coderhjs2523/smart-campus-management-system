@@ -1,0 +1,30 @@
+<div class="main_card">
+
+  <!-- Total Complaints Card -->
+  <div class="card1 card">
+    <i class="fa-regular fa-clipboard icon"></i>
+    <div class="data">
+      <h1><%= typeof totalComplaints !== 'undefined' ? totalComplaints : 0 %></h1>
+      <p><%= typeof card1_name !== 'undefined' ? card1_name : 'Complaints' %></p>
+    </div>
+  </div>
+
+  <!-- Resolved Complaints Card -->
+  <div class="card2 card">
+    <i class="fa-solid fa-check icon"></i>
+    <div class="data">
+      <h1><%= typeof resolvedComplaints !== 'undefined' ? resolvedComplaints : 0 %></h1>
+      <p><%= typeof card2_name !== 'undefined' ? card2_name : 'Resolved Complaints' %></p>
+    </div>
+  </div>
+
+  <!-- Pending / Other Complaints Card -->
+  <div class="card3 card">
+    <i class="fa-solid fa-hourglass-half icon"></i>
+    <div class="data">
+      <h1><%= typeof pendingComplaints !== 'undefined' ? pendingComplaints : 0 %></h1>
+      <p><%= typeof card3_name !== 'undefined' ? card3_name : 'Pending Complaints' %></p>
+    </div>
+  </div>
+
+</div>

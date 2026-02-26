@@ -1,0 +1,24 @@
+<!-- Sidebar start -->
+<section class="sidebar">
+
+  <!-- Navigation Links -->
+  <ul>
+    <li><a href="/dashboard" class="<%= typeof currentPath !== 'undefined' && currentPath === '/' ? 'active' : '' %>"><i class="fa-solid fa-gauge"></i> Dashboard</a></li>
+
+    <% if (userName) { %>
+      <!-- Logged in user ke liye options -->
+      <li><a href="/raise_complaint"><i class="fa-solid fa-plus-circle"></i> Raise Complaint</a></li>
+      <li><a href="/my_complaint"><i class="fa-solid fa-list"></i> My Complaints</a></li>
+      <li><a href="/feedback"><i class="fa-solid fa-comment-dots"></i> Feedback</a></li>
+
+      <% if (userRole === 'admin') { %>
+        <li><a href="/admin_dashboard"><i class="fa-solid fa-chart-line"></i> Admin Dashboard</a></li>
+        <li><a href="/admin_analytics"><i class="fa-solid fa-chart-bar"></i> Admin Analytics</a></li>
+        <li><a href="/admin_complaints"><i class="fa-solid fa-list-check"></i> All Complaints</a></li>
+        <li><a href="/admin_feedback"><i class="fa-solid fa-comments"></i> All Feedback</a></li>
+      <% } %>
+
+      <li><a href="/logout" class="logout"><i class="fa-solid fa-right-from-bracket"></i> Logout</a></li>
+  </ul>
+</section>
+<!-- Sidebar end -->
